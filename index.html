@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal de Búsqueda de Cédulas Profesionales</title>
   
-  <!-- Tipografía Montserrat y Serif para el título principal -->
+  <!-- Tipografía Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <!-- FontAwesome para íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -107,53 +107,29 @@
       font-weight: 400;
     }
 
-    /* --- BANNER GUINDA PRINCIPAL (HERO) CON UN SOLO LOGO GRANDE --- */
+    /* --- BANNER GUINDA PRINCIPAL (HERO) CON LOGO COMPLETO --- */
     .hero-banner {
       background-color: var(--color-primary);
       color: white;
-      padding: 30px 10%;
+      padding: 20px 10%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      min-height: 240px;
-      gap: 20px;
+      justify-content: center;
+      min-height: 200px;
+      width: 100%;
     }
 
-    .hero-image-single-container {
-      flex: 1;
+    .hero-image-full-container {
+      width: 100%;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      max-width: 60%;
+      justify-content: center;
     }
 
     .hero-banner-img {
-      max-height: 190px;
-      width: auto;
-      max-width: 100%;
+      width: 100%;
+      max-height: 220px;
       object-fit: contain;
-    }
-
-    .hero-text-container {
-      text-align: right;
-      flex: 1;
-      max-width: 40%;
-    }
-
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 42px;
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 12px;
-      color: #FFFFFF;
-    }
-
-    .hero-subtitle {
-      font-size: 20px;
-      font-weight: 300;
-      opacity: 0.95;
-      letter-spacing: 0.5px;
     }
 
     /* --- BREADCRUMB --- */
@@ -424,7 +400,6 @@
   <header>
     <div class="top-bar">
       <div class="top-bar-left">
-        <!-- Reemplaza con el logo superior de tu proyecto -->
         <img src="assets/logo-header.png" alt="Logo Principal" class="header-logo">
       </div>
       <div class="top-bar-right">
@@ -446,16 +421,10 @@
     </nav>
   </header>
 
-  <!-- BANNER GUINDA CON EL LOGO COMPLETO A LA IZQUIERDA -->
+  <!-- BANNER GUINDA PRINCIPAL: ABARCA TODO EL ANCHO CON UN SOLO LOGO -->
   <section class="hero-banner">
-    <div class="hero-image-single-container">
-      <!-- GUARDA TU LOGO COMO "banner-logo.png" DENTRO DE LA CARPETA "assets" -->
-      <img src="assets/banner-logo.png" alt="Logo Banner" class="hero-banner-img">
-    </div>
-
-    <div class="hero-text-container">
-      <h1 class="hero-title">Registro Nacional<br>de Profesionistas</h1>
-      <p class="hero-subtitle">Consulta de Cédulas Profesionales</p>
+    <div class="hero-image-full-container">
+      <img src="assets/banner-logo.png" alt="Banner Principal" class="hero-banner-img">
     </div>
   </section>
 
