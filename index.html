@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal de Búsqueda de Cédulas Profesionales</title>
+  
+  <!-- Tipografía Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   
+  <!-- FontAwesome para los íconos de redes sociales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     :root {
-      --color-primary: #691C32; /* Guinda */
+      --color-primary: #691C32; /* Tinto / Guinda */
       --color-primary-dark: #4d1323;
       --color-gold: #9E7B4F;
       --color-bg-light: #F8F9FA;
@@ -34,7 +39,13 @@
       min-height: 100vh;
     }
 
-    /* Topbar Navigation */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* --- Encabezado / Navegación --- */
     header {
       background-color: var(--color-primary);
       color: white;
@@ -44,15 +55,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 10%;
+      padding: 10px 8%;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       font-size: 14px;
     }
 
-    .logo-placeholder {
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: 0.5px;
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .custom-logo {
+      max-height: 40px;
+      width: auto;
     }
 
     .nav-links {
@@ -67,7 +82,7 @@
     }
 
     .main-nav {
-      padding: 12px 10%;
+      padding: 12px 8%;
       background-color: var(--color-primary-dark);
     }
 
@@ -84,19 +99,18 @@
       font-weight: 400;
     }
 
-    /* Banner Hero */
+    /* --- Banner Hero --- */
     .hero-banner {
       background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
       color: white;
-      padding: 60px 10%;
+      padding: 50px 8%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: relative;
     }
 
     .hero-title h1 {
-      font-size: 38px;
+      font-size: 36px;
       font-weight: 700;
       margin-bottom: 10px;
     }
@@ -106,9 +120,13 @@
       opacity: 0.9;
     }
 
-    /* Breadcrumbs */
+    .hero-image-container {
+      max-width: 40%;
+    }
+
+    /* --- Ruta de navegación (Breadcrumbs) --- */
     .breadcrumb {
-      padding: 15px 10%;
+      padding: 15px 8%;
       font-size: 14px;
       color: #666;
     }
@@ -119,17 +137,17 @@
       font-weight: 600;
     }
 
-    /* Main Content Container */
+    /* --- Contenido Principal --- */
     main {
       flex: 1;
-      padding: 10px 10% 50px 10%;
+      padding: 10px 8% 50px 8%;
       max-width: 1400px;
       margin: 0 auto;
       width: 100%;
     }
 
     .content-header h2 {
-      font-size: 28px;
+      font-size: 26px;
       color: var(--color-text);
       font-weight: 700;
       margin-bottom: 10px;
@@ -152,10 +170,10 @@
     .highlight-banner {
       text-align: center;
       margin: 30px 0 20px 0;
-      font-size: 16px;
+      font-size: 15px;
     }
 
-    /* Search Form Box */
+    /* --- Formulario de Búsqueda --- */
     .search-box {
       background-color: var(--color-bg-light);
       border: 1px solid var(--color-gray-border);
@@ -164,7 +182,6 @@
       margin-top: 20px;
     }
 
-    /* Tabs */
     .tabs {
       display: flex;
       background-color: #EAEAEA;
@@ -187,7 +204,6 @@
       color: white;
     }
 
-    /* Tab Content Form */
     .tab-content {
       display: none;
       padding: 25px;
@@ -228,7 +244,6 @@
       border-color: var(--color-primary);
     }
 
-    /* Form Actions/Buttons */
     .form-actions {
       display: flex;
       justify-content: flex-end;
@@ -273,7 +288,7 @@
       cursor: not-allowed;
     }
 
-    /* Results Table Section */
+    /* --- Tabla de Resultados --- */
     .results-container {
       margin-top: 30px;
       display: none;
@@ -297,57 +312,135 @@
       color: white;
     }
 
-    /* Footer */
-    footer {
-      background-color: var(--color-primary-dark);
-      color: white;
-      padding: 40px 10% 20px 10%;
-      font-size: 13px;
+    /* --- Pie de Página (Footer) --- */
+    .site-footer {
+      background-color: var(--color-primary);
+      color: #ffffff;
+      padding: 15px 8% 40px 8%;
     }
 
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .version-tag {
+      text-align: center;
+      font-size: 11px;
+      opacity: 0.8;
+      margin-bottom: 25px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       gap: 30px;
-      margin-bottom: 30px;
     }
 
-    .footer-section h4 {
+    .footer-col {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-logo {
+      max-width: 180px;
+      height: auto;
+    }
+
+    .footer-col h4 {
       font-size: 15px;
-      margin-bottom: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
 
-    .footer-section ul {
+    .footer-col ul {
       list-style: none;
     }
 
-    .footer-section ul li {
+    .footer-col ul li {
       margin-bottom: 8px;
     }
 
-    .footer-section a {
-      color: white;
+    .footer-col a {
+      color: #ffffff;
       text-decoration: none;
-      opacity: 0.8;
+      font-size: 13px;
+      opacity: 0.9;
     }
 
-    .footer-bottom {
-      text-align: center;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      opacity: 0.6;
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-col p {
+      font-size: 13px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .inline-link {
+      text-decoration: underline !important;
+    }
+
+    .bold-link {
+      font-weight: 700;
+      text-decoration: underline !important;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      font-size: 16px;
+      opacity: 1;
+    }
+
+    .contact-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .contact-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .phone-number {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .phone-label {
+      font-size: 10px;
+      max-width: 110px;
+      line-height: 1.1;
+      opacity: 0.9;
     }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado / Header -->
+  <!-- Encabezado / Menú -->
   <header>
     <div class="top-bar">
-      <div class="logo-placeholder">[ LOGO INSTITUCIONAL ]</div>
+      <div class="logo-container">
+        <!-- REEMPLAZAR SRC CON TU LOGO SUPERIOR -->
+        <img src="assets/logo-header.png" alt="Logo Institucional" class="custom-logo">
+      </div>
       <ul class="nav-links">
         <li><a href="#">Trámites</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Gobierno</a></li>
       </ul>
     </div>
     <nav class="main-nav">
@@ -355,25 +448,31 @@
         <li><a href="#">Inicio</a></li>
         <li><a href="#">Cédulas Profesionales</a></li>
         <li><a href="#">Especialistas</a></li>
+        <li><a href="#">Cédulas Estatales</a></li>
         <li><a href="#">Datos Abiertos</a></li>
+        <li><a href="#">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Banner Principal -->
+  <!-- Banner Hero -->
   <section class="hero-banner">
     <div class="hero-title">
       <h1>Registro Nacional de Profesionistas</h1>
       <p>Consulta de Cédulas Profesionales</p>
     </div>
+    <div class="hero-image-container">
+      <!-- REEMPLAZAR SRC CON LA ILUSTRACIÓN DEL BANNER -->
+      <img src="assets/banner-hero-img.png" alt="Ilustración Búsqueda" class="hero-img">
+    </div>
   </section>
 
-  <!-- Ruta de Navegación -->
+  <!-- Rutas -->
   <div class="breadcrumb">
     <a href="#">Inicio</a> &gt; Búsqueda de Cédulas Profesionales
   </div>
 
-  <!-- Contenido Principal -->
+  <!-- Área de Contenido Principal -->
   <main>
     <div class="content-header">
       <h2>Realiza tu búsqueda de forma segura y confiable.</h2>
@@ -381,22 +480,25 @@
     </div>
 
     <p class="description-text">
-      Al ingresar los datos, los resultados te mostrarán si la persona profesionista cuenta con título registrado y cédula profesional expedida, cumpliendo con todos los requisitos de ley.
+      Al ingresar los datos, los resultados te mostrarán que la persona profesionista cuenta con título registrado y cédula profesional expedida, cumpliendo con todos los requisitos de la ley.
+    </p>
+    <p class="description-text">
+      La información publicada en este sitio se realiza en estricto apego a la Política de Datos Abiertos y en congruencia con los principios que rigen su publicación. Dicha información se actualiza de manera periódica; en consecuencia, la Secretaría de Educación Pública se deslinda de cualquier responsabilidad derivada del uso, reproducción, adecuación o modalidad que pudiera adquirir en sitios web distintos al oficial.
     </p>
 
     <div class="highlight-banner">
       <p><strong>¡Descarga la Constancia de Situación Profesional!</strong></p>
-      <p>Recuerda: La <strong>emisión de la Constancia</strong> es completamente gratuita.</p>
+      <p>Recuerda: La <strong>emisión de la Constancia</strong> es <strong>completamente gratuita</strong>.</p>
     </div>
 
-    <!-- Contenedor del Formulario y Pestañas -->
+    <!-- Pestañas y Formulario -->
     <div class="search-box">
       <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('datos-generales')">Datos generales</button>
-        <button class="tab-btn" onclick="switchTab('numero-cedula')">Número de cédula</button>
+        <button class="tab-btn active" onclick="switchTab('datos-generales', event)">Datos generales</button>
+        <button class="tab-btn" onclick="switchTab('numero-cedula', event)">Número de cédula</button>
       </div>
 
-      <!-- Pestaña 1: Datos Generales -->
+      <!-- Formulario 1: Datos Generales -->
       <div id="datos-generales" class="tab-content active">
         <form id="form-datos-generales" onsubmit="handleSearch(event)">
           <div class="form-grid">
@@ -426,7 +528,7 @@
         </form>
       </div>
 
-      <!-- Pestaña 2: Número de Cédula -->
+      <!-- Formulario 2: Número de Cédula -->
       <div id="numero-cedula" class="tab-content">
         <form id="form-cedula" onsubmit="handleSearch(event)">
           <div class="form-grid">
@@ -444,9 +546,9 @@
       </div>
     </div>
 
-    <!-- Área donde se muestran los resultados simulados -->
+    <!-- Resultados -->
     <div id="results-container" class="results-container">
-      <h3>Resultados de Búsqueda</h3>
+      <h3>Resultados encontrados</h3>
       <table class="results-table">
         <thead>
           <tr>
@@ -459,37 +561,73 @@
           </tr>
         </thead>
         <tbody id="results-body">
-          <!-- Se llena dinámicamente con JS -->
+          <!-- Contenido generado con JavaScript -->
         </tbody>
       </table>
     </div>
   </main>
 
-  <!-- Pie de Página / Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
+  <!-- Pie de Página (Footer) -->
+  <footer class="site-footer">
+    <div class="version-tag">RNP v1.6.15</div>
+    
+    <div class="footer-container">
+      <!-- Columna 1: Logo -->
+      <div class="footer-col footer-brand">
+        <!-- REEMPLAZAR SRC CON TU LOGO DEL FOOTER -->
+        <img src="assets/logo-footer.png" alt="Logo Pie de Página" class="footer-logo">
+      </div>
+
+      <!-- Columna 2: Enlaces -->
+      <div class="footer-col">
         <h4>Enlaces</h4>
         <ul>
-          <li><a href="#">Datos Abiertos</a></li>
+          <li><a href="#">Datos abiertos de la SABG</a></li>
           <li><a href="#">Marco Jurídico</a></li>
-          <li><a href="#">Plataforma de Transparencia</a></li>
+          <li><a href="#">Plataforma Nacional de Transparencia</a></li>
+          <li><a href="#">Transparencia para el pueblo</a></li>
+          <li><a href="#">Alerta</a></li>
         </ul>
       </div>
-      <div class="footer-section">
-        <h4>Información</h4>
-        <p>Portal institucional de consulta ciudadana y datos abiertos.</p>
+
+      <!-- Columna 3: Información -->
+      <div class="footer-col">
+        <h4>¿Qué es gob.mx?</h4>
+        <p>Es el portal único de trámites, información y participación ciudadana. <a href="#" class="inline-link">Leer más</a></p>
+        <ul>
+          <li><a href="#">Portal de datos abiertos</a></li>
+          <li><a href="#">Declaración de accesibilidad</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+        </ul>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>RNP v1.0.0 &copy; Todos los derechos reservados.</p>
+
+      <!-- Columna 4: Redes y Contacto -->
+      <div class="footer-col">
+        <p><a href="#" class="bold-link">Denuncia contra servidores públicos</a></p>
+        
+        <h4>Síguenos en</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="contact-box">
+          <!-- REEMPLAZAR SRC CON TU ÍCONO DE CONTACTO O DEJA EL DE DEFECTO -->
+          <img src="assets/icon-asterisk.png" alt="Contacto" class="contact-icon">
+          <div class="contact-info">
+            <span class="phone-number">079</span>
+            <span class="phone-label">Comunícate, estamos para ayudarte</span>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- Lógica en JavaScript -->
+  <!-- Scripts -->
   <script>
-    // Cambiar entre pestañas
-    function switchTab(tabId) {
+    function switchTab(tabId, event) {
       document.querySelectorAll('.tab-content').forEach(content => {
         content.classList.remove('active');
       });
@@ -500,24 +638,19 @@
       document.getElementById(tabId).classList.add('active');
       event.currentTarget.classList.add('active');
       
-      // Ocultar resultados al cambiar de pestaña
       document.getElementById('results-container').style.display = 'none';
     }
 
-    // Limpiar campos del formulario seleccionado
     function clearForm(formId) {
       document.getElementById(formId).reset();
       document.getElementById('results-container').style.display = 'none';
     }
 
-    // Manejar evento de búsqueda (Simulación de resultado)
     function handleSearch(event) {
       event.preventDefault();
-
       const resultsContainer = document.getElementById('results-container');
       const resultsBody = document.getElementById('results-body');
 
-      // Ejemplo de datos devueltos (Simulación de API)
       resultsBody.innerHTML = `
         <tr>
           <td>12345678</td>
