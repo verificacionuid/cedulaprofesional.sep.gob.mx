@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   
-  <!-- FontAwesome -->
+  <!-- FontAwesome para íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -44,7 +44,7 @@
       display: block;
     }
 
-    /* --- TOPBAR SUPERIOR (Franja más oscura) --- */
+    /* --- TOPBAR SUPERIOR --- */
     .top-bar {
       background-color: var(--color-primary-dark);
       color: white;
@@ -60,7 +60,6 @@
       align-items: center;
     }
 
-    /* Espacio reservado para tu logo superior */
     .header-logo {
       height: 48px; 
       width: auto;
@@ -87,7 +86,7 @@
       font-size: 14px;
     }
 
-    /* --- MENU SECUNDARIO DE NAVEGACION --- */
+    /* --- MENÚ SECUNDARIO DE NAVEGACIÓN --- */
     .main-nav {
       background-color: var(--color-primary-dark);
       border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -108,38 +107,37 @@
       font-weight: 400;
     }
 
-    /* --- BANNER GUINDA PRINCIPAL (HERO) --- */
+    /* --- BANNER GUINDA PRINCIPAL (HERO) CON UN SOLO LOGO GRANDE --- */
     .hero-banner {
       background-color: var(--color-primary);
       color: white;
-      padding: 40px 10%;
+      padding: 30px 10%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 260px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Contenedor para la galeria de logos/imagenes a la izquierda */
-    .hero-images-container {
-      display: flex;
-      align-items: center;
+      min-height: 240px;
       gap: 20px;
     }
 
-    /* Tamaño de cada imagen flotante dentro del banner */
-    .hero-card-img {
-      height: 180px;
-      width: auto;
-      object-fit: contain;
-      filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
+    .hero-image-single-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      max-width: 60%;
     }
 
-    /* Contenedor del Texto alineado a la derecha */
+    .hero-banner-img {
+      max-height: 190px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
     .hero-text-container {
       text-align: right;
-      max-width: 500px;
+      flex: 1;
+      max-width: 40%;
     }
 
     .hero-title {
@@ -422,12 +420,12 @@
 </head>
 <body>
 
-  <!-- 1. BARRA SUPERIOR CON TU LOGO DERECHA E IZQUIERDA -->
+  <!-- BARRA SUPERIOR Y NAVEGACIÓN -->
   <header>
     <div class="top-bar">
       <div class="top-bar-left">
-        <!-- AGREGA AQUÍ TU LOGO PRINCIPAL DEL HEADER -->
-        <img src="assets/tu-logo-principal.png" alt="Logo Principal" class="header-logo">
+        <!-- Reemplaza con el logo superior de tu proyecto -->
+        <img src="assets/logo-header.png" alt="Logo Principal" class="header-logo">
       </div>
       <div class="top-bar-right">
         <a href="#">Trámites</a>
@@ -436,7 +434,6 @@
       </div>
     </div>
 
-    <!-- MENÚ DE NAVEGACIÓN -->
     <nav class="main-nav">
       <ul>
         <li><a href="#">Inicio &#9662;</a></li>
@@ -449,23 +446,20 @@
     </nav>
   </header>
 
-  <!-- 2. FRANJA GUINDA (BANNER HERO) CON LOGOS A LA IZQUIERDA Y TEXTO A LA DERECHA -->
+  <!-- BANNER GUINDA CON EL LOGO COMPLETO A LA IZQUIERDA -->
   <section class="hero-banner">
-    <!-- IMÁGENES/LOGOS DEL BANNER (PUEDES AGREGAR O QUITAR ETIQUETAS <img>) -->
-    <div class="hero-images-container">
-      <img src="assets/tu-banner-logo-1.png" alt="Logo 1" class="hero-card-img">
-      <img src="assets/tu-banner-logo-2.png" alt="Logo 2" class="hero-card-img">
-      <img src="assets/tu-banner-logo-3.png" alt="Logo 3" class="hero-card-img">
+    <div class="hero-image-single-container">
+      <!-- GUARDA TU LOGO COMO "banner-logo.png" DENTRO DE LA CARPETA "assets" -->
+      <img src="assets/banner-logo.png" alt="Logo Banner" class="hero-banner-img">
     </div>
 
-    <!-- TEXTO ACOMODADO A LA DERECHA -->
     <div class="hero-text-container">
       <h1 class="hero-title">Registro Nacional<br>de Profesionistas</h1>
       <p class="hero-subtitle">Consulta de Cédulas Profesionales</p>
     </div>
   </section>
 
-  <!-- BREADCRUMB -->
+  <!-- RUTA DE NAVEGACIÓN -->
   <div class="breadcrumb">
     <i class="fa-solid fa-house"></i> <a href="#">Inicio</a> &gt; Búsqueda de Cédulas Profesionales
   </div>
@@ -561,14 +555,13 @@
     </div>
   </main>
 
-  <!-- PIE DE PÁGINA -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="version-tag">RNP v1.6.15</div>
     
     <div class="footer-container">
       <div class="footer-col footer-brand">
-        <!-- TU LOGO INFERIOR -->
-        <img src="assets/tu-logo-footer.png" alt="Logo Footer" class="footer-logo">
+        <img src="assets/logo-footer.png" alt="Logo Footer" class="footer-logo">
       </div>
 
       <div class="footer-col">
@@ -604,7 +597,7 @@
         </div>
 
         <div class="contact-box">
-          <img src="assets/tu-icono-contacto.png" alt="Icono" class="contact-icon">
+          <img src="assets/tu-icono-contacto.png" alt="Icono Contacto" class="contact-icon">
           <div class="contact-info">
             <span class="phone-number">079</span>
             <span class="phone-label">Comunícate, estamos para ayudarte</span>
@@ -614,7 +607,7 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT DE FUNCIONALIDAD -->
+  <!-- LÓGICA EN JAVASCRIPT -->
   <script>
     function switchTab(tabId, event) {
       document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
